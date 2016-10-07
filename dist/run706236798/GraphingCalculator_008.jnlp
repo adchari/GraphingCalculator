@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="GraphingCalculator_008.jnlp">
+  <information>
+    <title>GraphingCalculator_008</title>
+    <vendor>chari5044</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="GraphingCalculator_008.jar" size="16205" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="GraphingCalculator_008" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="graphingcalculator.GraphingCalculator"  name="GraphingCalculator_008" />
+  <update check="always"/>
+</jnlp>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphingcalculator.GUIController">
+   <children>
+      <TextArea fx:id="calculatorPane" layoutX="14.0" layoutY="40.0" prefHeight="156.0" prefWidth="327.0" promptText="Past operations will be displayed here" />
+      <Button fx:id="equalButton" layoutX="246.0" layoutY="547.0" mnemonicParsing="false" onAction="#calculateInput" prefHeight="44.0" prefWidth="96.0" text="=&#10;EVALUATE" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <TextField fx:id="operationPane" layoutX="14.0" layoutY="226.0" prefHeight="25.0" prefWidth="327.0" promptText="Enter an operation here" />
+      <Button fx:id="divideButton" layoutX="292.0" layoutY="492.0" mnemonicParsing="false" onAction="#addSlash" prefHeight="45.0" prefWidth="48.0" text="/" />
+      <Button fx:id="multiplyButton" layoutX="292.0" layoutY="422.0" mnemonicParsing="false" onAction="#addStar" prefHeight="45.0" prefWidth="48.0" text="X" />
+      <Button fx:id="minusButton" layoutX="292.0" layoutY="352.0" mnemonicParsing="false" onAction="#addMinus" prefHeight="45.0" prefWidth="48.0" text="–" />
+      <Button fx:id="addButton" layoutX="292.0" layoutY="282.0" mnemonicParsing="false" onAction="#addPlus" prefHeight="45.0" prefWidth="48.0" text="+" />
+      <Button fx:id="oneButton" layoutX="82.0" layoutY="282.0" mnemonicParsing="false" onAction="#addOne" prefHeight="45.0" prefWidth="48.0" text="1" />
+      <Button fx:id="twoButton" layoutX="152.0" layoutY="282.0" mnemonicParsing="false" onAction="#addTwo" prefHeight="45.0" prefWidth="48.0" text="2" />
+      <Button fx:id="threeButton" layoutX="222.0" layoutY="282.0" mnemonicParsing="false" onAction="#addThree" prefHeight="45.0" prefWidth="48.0" text="3" />
+      <Button fx:id="sixButton" layoutX="222.0" layoutY="352.0" mnemonicParsing="false" onAction="#addSix" prefHeight="45.0" prefWidth="48.0" text="6" />
+      <Button fx:id="fiveButton" layoutX="152.0" layoutY="352.0" mnemonicParsing="false" onAction="#addFive" prefHeight="45.0" prefWidth="48.0" text="5" />
+      <Button fx:id="fourButton" layoutX="82.0" layoutY="352.0" mnemonicParsing="false" onAction="#addFour" prefHeight="45.0" prefWidth="48.0" text="4" />
+      <Button fx:id="nineButton" layoutX="222.0" layoutY="422.0" mnemonicParsing="false" onAction="#addNine" prefHeight="45.0" prefWidth="48.0" text="9" />
+      <Button fx:id="eightButton" layoutX="152.0" layoutY="422.0" mnemonicParsing="false" onAction="#addEight" prefHeight="45.0" prefWidth="48.0" text="8" />
+      <Button fx:id="sevenButton" layoutX="82.0" layoutY="422.0" mnemonicParsing="false" onAction="#addSeven" prefHeight="45.0" prefWidth="48.0" text="7" />
+      <Button fx:id="zeroButton" layoutX="222.0" layoutY="492.0" mnemonicParsing="false" onAction="#addZero" prefHeight="45.0" prefWidth="48.0" text="0" />
+      <Button fx:id="rightPButton" layoutX="152.0" layoutY="492.0" mnemonicParsing="false" onAction="#addRightP" prefHeight="45.0" prefWidth="48.0" text=")" />
+      <Button fx:id="leftPButton" layoutX="82.0" layoutY="492.0" mnemonicParsing="false" onAction="#addLeftP" prefHeight="45.0" prefWidth="48.0" text="(" />
+      <Button fx:id="exponentButton" layoutX="12.0" layoutY="282.0" mnemonicParsing="false" onAction="#addExponent" prefHeight="45.0" prefWidth="48.0" text="^" />
+      <Button fx:id="rootButton" layoutX="12.0" layoutY="352.0" mnemonicParsing="false" onAction="#addRoot" prefHeight="45.0" prefWidth="48.0" text="√" />
+      <Button fx:id="lnButton" layoutX="12.0" layoutY="422.0" mnemonicParsing="false" onAction="#addLN" prefHeight="45.0" prefWidth="48.0" text="ln" />
+      <Button fx:id="decimalButton" layoutX="12.0" layoutY="492.0" mnemonicParsing="false" onAction="#addDecimal" prefHeight="45.0" prefWidth="48.0" text=".">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="354.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="Calculator">
+              <items>
+                  <Menu mnemonicParsing="false" text="Constants">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#addPi" text="π" />
+                        <MenuItem mnemonicParsing="false" onAction="#adde" text="e" />
+                    </items>
+                  </Menu>
+                <MenuItem mnemonicParsing="false" onAction="#exitApp" text="Exit" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Functions">
+            <items>
+                  <Menu mnemonicParsing="false" text="Basic">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="log" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Probability">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#addNPR" text="nPr" />
+                        <MenuItem mnemonicParsing="false" onAction="#addNCR" text="nCr" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Trigonometry">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#addSin" text="Sine" />
+                        <MenuItem mnemonicParsing="false" onAction="#addCos" text="Cosine" />
+                        <MenuItem mnemonicParsing="false" onAction="#addTan" text="Tangent" />
+                        <MenuItem mnemonicParsing="false" onAction="#addCsc" text="Cosecant" />
+                        <MenuItem mnemonicParsing="false" onAction="#addSec" text="Secant" />
+                        <MenuItem mnemonicParsing="false" onAction="#addCot" text="Cotangent" />
+                        <MenuItem mnemonicParsing="false" onAction="#addInvSin" text="Inverse Sine" />
+                        <MenuItem mnemonicParsing="false" onAction="#addInvCos" text="Inverse Cosine" />
+                        <MenuItem mnemonicParsing="false" onAction="#addInvTan" text="Inverse Tangent" />
+                        <MenuItem mnemonicParsing="false" onAction="#addInvCsc" text="Inverse Cosecant" />
+                        <MenuItem mnemonicParsing="false" onAction="#addInvSec" text="Inverse Secant" />
+                        <MenuItem mnemonicParsing="false" onAction="#addInvCot" text="Inverse Cotangent" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Calculus">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Left-Hand Limit" />
+                        <MenuItem mnemonicParsing="false" text="Right-Hand Limit" />
+                        <MenuItem mnemonicParsing="false" text="Limit" />
+                      <MenuItem mnemonicParsing="false" text="⌠Integrals" />
+                        <MenuItem mnemonicParsing="false" text="Derivatives" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Memory">
+               <items>
+                  <Menu mnemonicParsing="false" text="Store Into">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#addMemA" text="a" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemB" text="b" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemC" text="c" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemD" text="d" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemF" text="f" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemG" text="g" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemH" text="h" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemI" text="i" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemJ" text="j" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemK" text="k" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemL" text="l" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemM" text="m" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemN" text="n" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemO" text="o" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemP" text="p" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemQ" text="q" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemR" text="r" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemS" text="s" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemT" text="t" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemU" text="u" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemV" text="v" />
+                      <MenuItem mnemonicParsing="false" onAction="#addMemW" text="w" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Recall">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#recallA" text="a" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallB" text="b" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallC" text="c" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallD" text="d" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallF" text="f" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallG" text="g" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallH" text="h" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallI" text="i" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallJ" text="j" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallK" text="k" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallL" text="l" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallM" text="m" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallN" text="n" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallO" text="o" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallP" text="p" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallQ" text="q" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallR" text="r" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallS" text="s" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallT" text="t" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallU" text="u" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallV" text="v" />
+                      <MenuItem mnemonicParsing="false" onAction="#recallW" text="w" />
+                    </items>
+                  </Menu>
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#displayInfo" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#displayHelp" text="How to Input Operations" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Canvas fx:id="graphPane" height="156.0" layoutX="14.0" layoutY="40.0" visible="false" width="327.0" />
+   </children>
+</AnchorPane>
